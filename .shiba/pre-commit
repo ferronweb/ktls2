@@ -1,0 +1,7 @@
+#!/bin/bash
+cargo clippy --fix --all-targets --allow-staged --allow-dirty || exit $?
+cargo fmt || exit $?
+
+for rust_file in $(comm -12 <(git diff --name-only --cached | sort) <(git diff --name-only | sort) | grep ".*\.rs$"); do
+  git add $rust_file
+done

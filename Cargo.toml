@@ -37,6 +37,7 @@ test-case = "3.3.1"
 tokio = { version = "1.39.2", features = ["full"] }
 monoio = { version = "0.2.4", features = ["poll-io"] }
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+shiba = "0.1.1"
 
 [features]
 default = ["aws_lc_rs", "tls12"]
